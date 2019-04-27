@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CavalloDiUnaSolaCellulaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CavalloDiUnaSolaCellulaModelStoreContainer">
+          <EntitySet Name="petizione" EntityType="CavalloDiUnaSolaCellulaModel.Store.petizione" store:Type="Tables" store:Schema="dbo" store:Name="petizione">
+            <DefiningQuery>SELECT 
+      [petizione].[ID_Petizione] AS [ID_Petizione], 
+      [petizione].[DataInserimento] AS [DataInserimento], 
+      [petizione].[Nome] AS [Nome], 
+      [petizione].[Commento] AS [Commento]
+      FROM [dbo].[petizione] AS [petizione]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sysdiagrams" EntityType="CavalloDiUnaSolaCellulaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tab_archiviomusica" EntityType="CavalloDiUnaSolaCellulaModel.Store.tab_archiviomusica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tab_mappa" EntityType="CavalloDiUnaSolaCellulaModel.Store.tab_mappa" store:Type="Tables" store:Schema="dbo" store:Name="tab_mappa">
+            <DefiningQuery>SELECT 
+      [tab_mappa].[id_page] AS [id_page], 
+      [tab_mappa].[id_menu] AS [id_menu], 
+      [tab_mappa].[menu] AS [menu], 
+      [tab_mappa].[page_name] AS [page_name], 
+      [tab_mappa].[page_description] AS [page_description], 
+      [tab_mappa].[map_index] AS [map_index], 
+      [tab_mappa].[parameter] AS [parameter]
+      FROM [dbo].[tab_mappa] AS [tab_mappa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tab_progetti" EntityType="CavalloDiUnaSolaCellulaModel.Store.tab_progetti" store:Type="Tables" store:Schema="dbo" store:Name="tab_progetti">
+            <DefiningQuery>SELECT 
+      [tab_progetti].[id_progetto] AS [id_progetto], 
+      [tab_progetti].[sezione] AS [sezione], 
+      [tab_progetti].[progetto] AS [progetto], 
+      [tab_progetti].[categoria] AS [categoria], 
+      [tab_progetti].[settore] AS [settore], 
+      [tab_progetti].[inizio] AS [inizio], 
+      [tab_progetti].[fine] AS [fine], 
+      [tab_progetti].[descrizione] AS [descrizione], 
+      [tab_progetti].[cliente_descrizione] AS [cliente_descrizione], 
+      [tab_progetti].[cliente_riferimentoWEB] AS [cliente_riferimentoWEB], 
+      [tab_progetti].[immagine] AS [immagine]
+      FROM [dbo].[tab_progetti] AS [tab_progetti]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tab_utenti" EntityType="CavalloDiUnaSolaCellulaModel.Store.tab_utenti" store:Type="Tables" store:Schema="dbo" store:Name="tab_utenti">
+            <DefiningQuery>SELECT 
+      [tab_utenti].[id_utente] AS [id_utente], 
+      [tab_utenti].[username] AS [username], 
+      [tab_utenti].[password] AS [password], 
+      [tab_utenti].[email] AS [email], 
+      [tab_utenti].[utente] AS [utente], 
+      [tab_utenti].[profilo] AS [profilo]
+      FROM [dbo].[tab_utenti] AS [tab_utenti]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="random10Pezzi" EntityType="CavalloDiUnaSolaCellulaModel.Store.random10Pezzi" store:Type="Views" store:Schema="dbo" store:Name="random10Pezzi">
+            <DefiningQuery>SELECT 
+      [random10Pezzi].[id] AS [id], 
+      [random10Pezzi].[Name] AS [Name], 
+      [random10Pezzi].[Artist] AS [Artist], 
+      [random10Pezzi].[Album Artist] AS [Album Artist], 
+      [random10Pezzi].[Album] AS [Album], 
+      [random10Pezzi].[Genre] AS [Genre], 
+      [random10Pezzi].[Kind] AS [Kind], 
+      [random10Pezzi].[Size] AS [Size], 
+      [random10Pezzi].[Total Time] AS [Total Time], 
+      [random10Pezzi].[Disc Number] AS [Disc Number], 
+      [random10Pezzi].[Disc Count] AS [Disc Count], 
+      [random10Pezzi].[Track Number] AS [Track Number], 
+      [random10Pezzi].[Track Count] AS [Track Count], 
+      [random10Pezzi].[Year] AS [Year], 
+      [random10Pezzi].[Date Modified] AS [Date Modified], 
+      [random10Pezzi].[Date Added] AS [Date Added], 
+      [random10Pezzi].[Bit Rate] AS [Bit Rate], 
+      [random10Pezzi].[Sample Rate] AS [Sample Rate]
+      FROM [dbo].[random10Pezzi] AS [random10Pezzi]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errori trovati durante la generazione:
+      avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'CavalloDiUnaSolaCellula.dbo.petizione'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.
+      -->
+        <EntityType Name="petizione">
+          <Key>
+            <PropertyRef Name="DataInserimento" />
+            <PropertyRef Name="Nome" />
+          </Key>
+          <Property Name="ID_Petizione" Type="numeric" Precision="10" />
+          <Property Name="DataInserimento" Type="datetime2" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Commento" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tab_archiviomusica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Artist" Type="varchar" MaxLength="255" />
+          <Property Name="Album Artist" Type="varchar" MaxLength="255" />
+          <Property Name="Album" Type="varchar" MaxLength="255" />
+          <Property Name="Genre" Type="varchar" MaxLength="255" />
+          <Property Name="Kind" Type="varchar" MaxLength="255" />
+          <Property Name="Size" Type="varchar" MaxLength="255" />
+          <Property Name="Total Time" Type="varchar" MaxLength="255" />
+          <Property Name="Disc Number" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Disc Count" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Track Number" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Track Count" Type="varchar" MaxLength="255" />
+          <Property Name="Year" Type="varchar" MaxLength="255" />
+          <Property Name="Date Modified" Type="varchar" MaxLength="255" />
+          <Property Name="Date Added" Type="varchar" MaxLength="255" />
+          <Property Name="Bit Rate" Type="varchar" MaxLength="255" />
+          <Property Name="Sample Rate" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+      avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'CavalloDiUnaSolaCellula.dbo.tab_mappa'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.
+      -->
+        <EntityType Name="tab_mappa">
+          <Key>
+            <PropertyRef Name="id_page" />
+            <PropertyRef Name="id_menu" />
+            <PropertyRef Name="menu" />
+            <PropertyRef Name="page_name" />
+          </Key>
+          <Property Name="id_page" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="id_menu" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="menu" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="page_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="page_description" Type="nvarchar" MaxLength="50" />
+          <Property Name="map_index" Type="nvarchar" MaxLength="20" />
+          <Property Name="parameter" Type="tinyint" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+      avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'CavalloDiUnaSolaCellula.dbo.tab_progetti'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.
+      -->
+        <EntityType Name="tab_progetti">
+          <Key>
+            <PropertyRef Name="sezione" />
+            <PropertyRef Name="progetto" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="settore" />
+            <PropertyRef Name="inizio" />
+            <PropertyRef Name="fine" />
+            <PropertyRef Name="descrizione" />
+            <PropertyRef Name="cliente_descrizione" />
+            <PropertyRef Name="cliente_riferimentoWEB" />
+            <PropertyRef Name="immagine" />
+          </Key>
+          <Property Name="id_progetto" Type="int" />
+          <Property Name="sezione" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="progetto" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="categoria" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="settore" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="inizio" Type="date" Nullable="false" />
+          <Property Name="fine" Type="date" Nullable="false" />
+          <Property Name="descrizione" Type="ntext" Nullable="false" />
+          <Property Name="cliente_descrizione" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="cliente_riferimentoWEB" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="immagine" Type="image" Nullable="false" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+      avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'CavalloDiUnaSolaCellula.dbo.tab_utenti'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.
+      -->
+        <EntityType Name="tab_utenti">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="id_utente" Type="tinyint" />
+          <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="utente" Type="nvarchar" MaxLength="25" />
+          <Property Name="profilo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errori trovati durante la generazione:
+      avviso 6002: Nessuna chiave primaria definita per la tabella/visualizzazione 'CavalloDiUnaSolaCellula.dbo.random10Pezzi'. La chiave è stata dedotta e la definizione è stata creata come tabella/visualizzazione di sola lettura.
+      -->
+        <EntityType Name="random10Pezzi">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Disc Number" />
+            <PropertyRef Name="Disc Count" />
+            <PropertyRef Name="Track Number" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Artist" Type="varchar" MaxLength="255" />
+          <Property Name="Album Artist" Type="varchar" MaxLength="255" />
+          <Property Name="Album" Type="varchar" MaxLength="255" />
+          <Property Name="Genre" Type="varchar" MaxLength="255" />
+          <Property Name="Kind" Type="varchar" MaxLength="255" />
+          <Property Name="Size" Type="varchar" MaxLength="255" />
+          <Property Name="Total Time" Type="varchar" MaxLength="255" />
+          <Property Name="Disc Number" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Disc Count" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Track Number" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Track Count" Type="varchar" MaxLength="255" />
+          <Property Name="Year" Type="varchar" MaxLength="255" />
+          <Property Name="Date Modified" Type="varchar" MaxLength="255" />
+          <Property Name="Date Added" Type="varchar" MaxLength="255" />
+          <Property Name="Bit Rate" Type="varchar" MaxLength="255" />
+          <Property Name="Sample Rate" Type="varchar" MaxLength="255" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CavalloDiUnaSolaCellulaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CavalloDiUnaSolaCellulaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="petizione" EntityType="CavalloDiUnaSolaCellulaModel.petizione" />
+          <EntitySet Name="sysdiagrams" EntityType="CavalloDiUnaSolaCellulaModel.sysdiagrams" />
+          <EntitySet Name="tab_mappa" EntityType="CavalloDiUnaSolaCellulaModel.tab_mappa" />
+          <EntitySet Name="tab_progetti" EntityType="CavalloDiUnaSolaCellulaModel.tab_progetti" />
+          <EntitySet Name="tab_utenti" EntityType="CavalloDiUnaSolaCellulaModel.tab_utenti" />
+          <EntitySet Name="random10Pezzi" EntityType="CavalloDiUnaSolaCellulaModel.random10Pezzi" />
+          <EntitySet Name="tab_archiviomusica" EntityType="CavalloDiUnaSolaCellulaModel.tab_archiviomusica" />
+        </EntityContainer>
+        <EntityType Name="petizione">
+          <Key>
+            <PropertyRef Name="DataInserimento" />
+            <PropertyRef Name="Nome" />
+          </Key>
+          <Property Name="ID_Petizione" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="DataInserimento" Type="DateTime" Nullable="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Commento" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tab_mappa">
+          <Key>
+            <PropertyRef Name="id_page" />
+            <PropertyRef Name="id_menu" />
+            <PropertyRef Name="menu" />
+            <PropertyRef Name="page_name" />
+          </Key>
+          <Property Name="id_page" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="id_menu" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="menu" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="page_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="page_description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="map_index" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="parameter" Type="Byte" />
+        </EntityType>
+        <EntityType Name="tab_progetti">
+          <Key>
+            <PropertyRef Name="sezione" />
+            <PropertyRef Name="progetto" />
+            <PropertyRef Name="categoria" />
+            <PropertyRef Name="settore" />
+            <PropertyRef Name="inizio" />
+            <PropertyRef Name="fine" />
+            <PropertyRef Name="descrizione" />
+            <PropertyRef Name="cliente_descrizione" />
+            <PropertyRef Name="cliente_riferimentoWEB" />
+            <PropertyRef Name="immagine" />
+          </Key>
+          <Property Name="id_progetto" Type="Int32" />
+          <Property Name="sezione" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="progetto" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="categoria" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="settore" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="inizio" Type="DateTime" Nullable="false" />
+          <Property Name="fine" Type="DateTime" Nullable="false" />
+          <Property Name="descrizione" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="cliente_descrizione" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="cliente_riferimentoWEB" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="immagine" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tab_utenti">
+          <Key>
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="id_utente" Type="Byte" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="utente" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="profilo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="random10Pezzi">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Disc_Number" />
+            <PropertyRef Name="Disc_Count" />
+            <PropertyRef Name="Track_Number" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Artist" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Album_Artist" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Album" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Genre" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Kind" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Size" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Total_Time" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Disc_Number" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Disc_Count" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Track_Number" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Track_Count" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Year" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Date_Modified" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Date_Added" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Bit_Rate" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sample_Rate" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tab_archiviomusica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Artist" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Album_Artist" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Album" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Genre" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Kind" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Size" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Total_Time" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Disc_Number" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Disc_Count" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Track_Number" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Track_Count" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Year" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Date_Modified" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Date_Added" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Bit_Rate" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sample_Rate" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CavalloDiUnaSolaCellulaModelStoreContainer" CdmEntityContainer="CavalloDiUnaSolaCellulaEntities">
+          <EntitySetMapping Name="petizione"><EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.petizione"><MappingFragment StoreEntitySet="petizione">
+            <ScalarProperty Name="ID_Petizione" ColumnName="ID_Petizione" />
+            <ScalarProperty Name="DataInserimento" ColumnName="DataInserimento" />
+            <ScalarProperty Name="Nome" ColumnName="Nome" />
+            <ScalarProperty Name="Commento" ColumnName="Commento" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tab_mappa"><EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.tab_mappa"><MappingFragment StoreEntitySet="tab_mappa">
+            <ScalarProperty Name="id_page" ColumnName="id_page" />
+            <ScalarProperty Name="id_menu" ColumnName="id_menu" />
+            <ScalarProperty Name="menu" ColumnName="menu" />
+            <ScalarProperty Name="page_name" ColumnName="page_name" />
+            <ScalarProperty Name="page_description" ColumnName="page_description" />
+            <ScalarProperty Name="map_index" ColumnName="map_index" />
+            <ScalarProperty Name="parameter" ColumnName="parameter" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tab_progetti"><EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.tab_progetti"><MappingFragment StoreEntitySet="tab_progetti">
+            <ScalarProperty Name="id_progetto" ColumnName="id_progetto" />
+            <ScalarProperty Name="sezione" ColumnName="sezione" />
+            <ScalarProperty Name="progetto" ColumnName="progetto" />
+            <ScalarProperty Name="categoria" ColumnName="categoria" />
+            <ScalarProperty Name="settore" ColumnName="settore" />
+            <ScalarProperty Name="inizio" ColumnName="inizio" />
+            <ScalarProperty Name="fine" ColumnName="fine" />
+            <ScalarProperty Name="descrizione" ColumnName="descrizione" />
+            <ScalarProperty Name="cliente_descrizione" ColumnName="cliente_descrizione" />
+            <ScalarProperty Name="cliente_riferimentoWEB" ColumnName="cliente_riferimentoWEB" />
+            <ScalarProperty Name="immagine" ColumnName="immagine" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tab_utenti"><EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.tab_utenti"><MappingFragment StoreEntitySet="tab_utenti">
+            <ScalarProperty Name="id_utente" ColumnName="id_utente" />
+            <ScalarProperty Name="username" ColumnName="username" />
+            <ScalarProperty Name="password" ColumnName="password" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="utente" ColumnName="utente" />
+            <ScalarProperty Name="profilo" ColumnName="profilo" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="random10Pezzi">
+            <EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.random10Pezzi">
+              <MappingFragment StoreEntitySet="random10Pezzi">
+                <ScalarProperty Name="Sample_Rate" ColumnName="Sample Rate" />
+                <ScalarProperty Name="Bit_Rate" ColumnName="Bit Rate" />
+                <ScalarProperty Name="Date_Added" ColumnName="Date Added" />
+                <ScalarProperty Name="Date_Modified" ColumnName="Date Modified" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Track_Count" ColumnName="Track Count" />
+                <ScalarProperty Name="Track_Number" ColumnName="Track Number" />
+                <ScalarProperty Name="Disc_Count" ColumnName="Disc Count" />
+                <ScalarProperty Name="Disc_Number" ColumnName="Disc Number" />
+                <ScalarProperty Name="Total_Time" ColumnName="Total Time" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Kind" ColumnName="Kind" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Album_Artist" ColumnName="Album Artist" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tab_archiviomusica">
+            <EntityTypeMapping TypeName="CavalloDiUnaSolaCellulaModel.tab_archiviomusica">
+              <MappingFragment StoreEntitySet="tab_archiviomusica">
+                <ScalarProperty Name="Sample_Rate" ColumnName="Sample Rate" />
+                <ScalarProperty Name="Bit_Rate" ColumnName="Bit Rate" />
+                <ScalarProperty Name="Date_Added" ColumnName="Date Added" />
+                <ScalarProperty Name="Date_Modified" ColumnName="Date Modified" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Track_Count" ColumnName="Track Count" />
+                <ScalarProperty Name="Track_Number" ColumnName="Track Number" />
+                <ScalarProperty Name="Disc_Count" ColumnName="Disc Count" />
+                <ScalarProperty Name="Disc_Number" ColumnName="Disc Number" />
+                <ScalarProperty Name="Total_Time" ColumnName="Total Time" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Kind" ColumnName="Kind" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Album" ColumnName="Album" />
+                <ScalarProperty Name="Album_Artist" ColumnName="Album Artist" />
+                <ScalarProperty Name="Artist" ColumnName="Artist" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CavalloDiUnaSolaCellulaModel">
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.petizione" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.tab_mappa" Width="1.5" PointX="2.75" PointY="3.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.tab_progetti" Width="1.5" PointX="4.75" PointY="0.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.tab_utenti" Width="1.5" PointX="4.75" PointY="4.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.random10Pezzi" Width="1.5" PointX="0.75" PointY="7.75" Height="4.480205078125" />
+        <EntityTypeShape EntityType="CavalloDiUnaSolaCellulaModel.tab_archiviomusica" Width="1.5" PointX="7.375" PointY="0.75" Height="4.4802050781250031" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

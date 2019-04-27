@@ -1,0 +1,21 @@
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+    self.setInterval('numerilloD1()', 100);
+    function numerilloD1() {
+        td1 = 'G' + Math.floor(Math.random() * 8);
+        r = new Array("abbiamo già il BIO", "abbiamo già la DOP", "adeguarsi al mercato", "azienda piccola", "è troppo forte il DOP", "eccessiva concorrenza", "enti pubblici", "garanzia del consumatore", "immagine migliore", "lavoriamo sul ns. marchio", "le possediamo già tutte", "maggiori garanzie", "mantenere i clienti", "mercato di nicchia", "necessario troppo impegno", "necessità dei soci", "non abbiamo fiducia", "non ce ne sono in zona", "non ce richiesta di BIO", "non ci crediamo", "non ci soddisfa", "non è cambiato niente", "non è efficace", "non richiesta dai clienti", "non richieste dai clienti", "non sono in programma", "per un fatto politico", "prodotti non adatti", "reddittività", "richieste dal mercato", "riconoscimento dalla CEE");
+        n = r.length;
+        c = Math.floor(Math.random() * n);
+        document.FD1.elements[td1].value = r[c];
+    }
+//]]>
+</script>
+<form name="FD1" method="post" action="">
+
+    @for(int i = 0; i < 8; i++){
+        @Html.TextBox("G"+i.ToString(), i, new { style = "width:240px;margin:1px" });
+    }
+
+</form>
+
+

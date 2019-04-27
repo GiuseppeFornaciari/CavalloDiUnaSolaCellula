@@ -1,0 +1,17 @@
+<form name="FD5" method="post" action="">
+    <input type="range" min="0" max="1000" name="G0" id="G0">
+    <input type="range" min="0" max="1000" name="G1" id="G1">
+    <input type="range" min="0" max="1000" name="G2" id="G2">
+    <input type="range" min="0" max="1000" name="G3" id="G3">
+    <input type="range" min="0" max="1000" name="G4" id="G4">
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    self.setInterval('numerilloD5()', 100);
+    function numerilloD5() {
+        //alert(Math.floor(Math.random()*100));
+        td5 = 'G' + Math.floor(Math.random() * 5);
+        document.FD5.elements[td5].value = Math.floor(Math.random() * 1000);
+    }
+//]]>
+</script>

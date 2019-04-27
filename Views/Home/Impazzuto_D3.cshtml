@@ -1,0 +1,65 @@
+<form name="FD3" method="post" action="">
+
+	    <select name='G0'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G1'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G2'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G3'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G4'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G5'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G6'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G7'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G8'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+	    <select name='G9'>
+	        <option value="1">Si</option>
+	        <option value="2">No</option>
+	        <option value="3">Non so</option>
+	    </select>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    self.setInterval('numerillo_D3()', 100);
+    function numerillo_D3() {
+        td3 = 'G' + Math.floor(Math.random() * 10);
+        i = Math.floor(Math.random() * 3);
+        //alert(t);
+        //alert(i);
+        document.FD3.elements[td3].selectedIndex = i;
+    }
+//]]>
+</script>

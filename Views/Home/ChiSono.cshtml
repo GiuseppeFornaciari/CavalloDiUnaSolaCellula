@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Chi sono";
+}
+<div id="content">
+    <div class="whide">
+        <!-- 1 colonna-->	
+        <div style="width:25%;float:left">
+            <div style="float:left;margin-bottom:1em;border:0px solid black;width:98%">
+                <h3 class="navbar">Sezioni</h3>
+                <ul class="navbar">
+                    <li class="navbar"><a class="navbar" href="Index">home</a></li>
+                    <li class="navbar_selected"><a class="navbar_selected" href="ChiSono">chi sono</a></li>
+			            <!-- Sezione statica in pagina -->
+			            <li class="navbar_static"><a class="navbar_static" href="#a1" id="1">percorso di studi</a></li>
+			            <li class="navbar_static"><a class="navbar_static" href="#a2" id="2">corsi e formazione </a></li>
+			            <li class="navbar_static_end"><a class="navbar_static" href="#a3" id="3">percorso lavorativo</a></li>
+                    <li class="navbar"><a class="navbar" href="Lavoro">lavoro</a></li>
+                    <li class="navbar"><a class="navbar" href="NonLavoro">non lavoro</a></li>
+                    <li class="navbar"><a class="navbar" href="Contatti">contatti</a></li>
+                </ul>
+            </div>    
+        </div>	
+        <!-- 2 colonna -->
+        <div style="float:left;width:70%;border-left:1px dotted black;margin:5px;">
+            <h1>Chi sono</h1>
+            <p>Mi chiamo <strong>Giuseppe Fornaciari</strong>,<br />
+            sono nato a Reggio Emilia il 02/06/1962, abito a San Martino in Rio un comune della provincia. Lavoro in proprio dal 1998 come <strong>consulente statistico informatico</strong> su progetti che hanno a che fare prevalentemente con indagini di mercato e gestione di banche dati.
+            </p>
+            <p>L'interesse per l'<strong>informatica</strong> è cresciuto nel tempo parallalamente al 
+            percorso lavorativo. Dalle iniziali resistenze che risalgono alla battitura delle tesi di laurea 
+            che insistevo voler scrivere a macchina, fino ad oggi, con molto meno tempo a disposizione, ho 
+            disordinatamente continuato a provare, sperimentare, sbagliare, studiare, lavorare con il computer. 
+            Nonostante tutto, il computer non è un semplice elettrodomestico e l'informatica non è solamente 
+            razionalizzazione dei processi produttivi.</p>
+            <figure class="chisono">
+                <img src="@ViewData["foto"].ToString()" alt="Ciao"/>
+                <figcaption>@Html.Label(ViewData["didascalia"].ToString())</figcaption>
+            </figure>
+            <p>L'informatica ovviamente non è tutto. Sono molto interessato a tutto quanto succede fuori dalla 
+            cornice del monitor. In particolare, credo che sia molto importante, uscire fisicamente dalle rispettive 
+            abitazioni, entrare nel mondo e relazionarsi con gli altri.<br /> 
+            I media passivi, in particolare la televisione, non mi interessano molto. La radio un po' di più. I film 
+            preferisco andarli a vedere al cinema quantomeno perchè già solamenmte la decisione di uscire e possibilmente 
+            incontrare amici o altra gente è un buon motivo.  
+            Dispongo ormai (azzzzzzzz.) degli strumenti moderni per comunicare ma penso che di persona rimanga ancora la soluzione migliore: 
+            Credo che i rapporti rimangano tanto più umani quanto minore è la mediazione con le macchine.</p>
+            <h2><a id="a1">Percorso di studi</a></h2>
+            <ol>
+	            <li><strong>1989 Laurea in Economia e Commercio</strong> conseguita presso la Facoltà di Economia e Commercio dell'Università degli Studi di Modena (punteggio di laurea 110/110).</li>
+	            <li><strong>1982 Diploma di Perito Agrario</strong> conseguito presso l'Istituto Tecnico Agrario Statle A.Zannelli di Reggio Emilia (punteggio finale 36/60).</li>
+            </ol>
+            <p style="text-align:right"><a href="#1">menu</a>&nbsp;<a href="#ChiSono">top</a></p>
+            <h2><a id="a2">Corsi e formazione</a></h2>
+            <ol>
+	            <li><strong>1988 Corso di formazione sull'utilizzo di Vax per le elaborazioni statistiche </strong> organizzato dal CED dell'Università degli Studi di Modena sull'utilizzo di Vax per le elaborazioni statistiche. </li>
+	            <li><strong>1990-1991 Ricerca guidata per la conoscenza delle imprese operanti nel settore agro alimentare</strong> corso di formazione post-laurea tenuto presso il Dipartimento di Economia Politica della Facoltà di Economia e Commercio di Modena.</li>
+	            <li><strong>dal 1990 Statistica</strong> autoformazione studio modelli d'analisi multivariata, tecniche di datammininig e datawharehose, apprendimento dei linguaggi di scripting software analisi statistica (SPSS, R).</li>
+	            <li><strong>dal 1990 Informatica</strong> autoformazione su modelli di basi dati, reti, sistemi operativi, linguaggi di progrmmazione, web.</li>
+            </ol>
+            <p style="text-align:right"><a href="#2">menu</a>&nbsp;<a href="#ChiSono">top</a></p>
+            <h2><a id="a3">Percorso lavorativo</a></h2>
+            <p>Dopo la laurea ho avviato rapporti di collaborazione (co.co.co) terminati definitivamente nel 1998 con l'avvio dell'attività di consulenza.</p>
+            <ul style="list-style-type:disc">
+	            <li><strong><em>dal gennaio 1998</em></strong> - lavoro di consulenza in proprio a tempo pieno.</li>
+	            <li><strong><em>aprile 1992, dicembre 1997</em></strong> - collaborazione prima a tempo parziale poi a tempo pieno (dal febbraio 1995) di tipo coordinata e continuativa con il <acronym title="Centro Ricerche Produzioni Animali">CRPA</acronym> di Reggio Emilia come collaboratore del settore economia e del settore informatica.<br/>
+	            Attività svolte con il  <strong>settore economia</strong>:<br/> collaborazione a numerosi progetti finalizzati all'analisi economica del settore mediante indagine. L'esperienza ha determinato l'acquisizione di competenze di coordinazione ed esecuzione di progetti mirati coinvolgendo tutte le attività dalla progettazione del lavoro fino alla stesura di un rapporto professionale. In particolare si sono affinate le tecniche di elaborazioni di dati economici mediante strumenti di indagine statistica.<br/>
+	            Attività svolte con il <strong>settore informatica</strong>:<br/>
+	            progettazione ed esecuzione di un programma di demo in ambiente Windows per la promozione di software di produzione <acronym title="Centro Ricerche Produzioni Animali">CRPA</acronym>; programma eseguito con i programmi COMPEL e TOOLBOOK. Progettazione ed realizzazione di un programma per la automatizzare il sistema informativo sulla qualità del latte. Costruzione procedure di simulazione tecnica-economica per gli allevamenti da latte con modelli dinamici.</li>
+	            <li><strong><em>marzo 1992, febbraio 1995</em></strong> - collaborazione a tempo parziale di tipo coordinata e continuativa con <acronym title="Cooperativa Architetti e Ingegneri di Reggio Emilia">CAIRE</acronym> di Reggio Emilia.</li>
+	            <li><strong><em>gennaio 1991, settembre 1991</em></strong> - collaborazione con <acronym title="Confederazione Generale Italiana del Lavoro">CGIL</acronym> di Reggio Emilia.</li>
+	            <li><strong><em>dicembre 1990, settembre 1992</em></strong> - collaborazione con il Dipartimento di Economia Politica della Facoltà di Economia e Commercio dell'Università degli Studi di Modena.</li>
+            </ul>
+            <p style="text-align:right"><a href="#3">menu</a>&nbsp;<a href="#ChiSono">top</a></p>
+        </div>
+    </div>
+</div>

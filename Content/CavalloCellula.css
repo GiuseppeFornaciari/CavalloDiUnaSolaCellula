@@ -1,0 +1,55 @@
+h3.sezione{padding:5px;background-color:#EFEFEF;color:#000000;margin:3px;border:1px solid  #000000;}
+h3.sezioneLavoro{padding:5px;background-color:#EFEFEF;color: #000000;margin:3px;border:1px solid  #000000;}
+h3.sezioneLavoro:first-letter{color:#FF3366;font-weight:bold;background-color:#EFEFEF;}
+h3.sezioneNonLavoro{padding:5px;background-color:#EFEFEF;color:#FF3366;margin:3px;border:1px solid  #000000;}
+h3.sezioneNonLavoro:first-letter{color:#000000;font-weight:bold;background-color:#EFEFEF;}
+/*ELEMENTI di base*/
+body{font-family: "Courier New",Courier,monospace;font-size: 76%;width: 90%;margin-left: 5%;margin-right: 5%;}
+h1{margin-left:0.4em; font-size: 1.8em;font-family: "Courier New",Courier,monospace;}
+h2{margin-left:0.4em; font-size: 1.5em;font-family: "Courier New",Courier,monospace;}
+h3{margin-left:0.4em; font-size: 1.2em;font-family: "Courier New",Courier,monospace;margin-bottom:0.1em}
+h4{margin-left:0.4em; font-size: 1.0em;font-family: "Courier New",Courier,monospace;}
+p{margin:4px; padding: 4px;font-family: "Courier New",Courier,monospace;}
+/*Class*/
+table.header{width: 100%;}
+td.headerTitle{font-size: 20px;width: 85%; font-weight: bolder; padding:5px }
+td.headerZoom{font-size: 16px; width: 15%; text-align: center;}
+a.bussola{font-size: 0.9em;color:#000000;background-color:#FFFFFF;text-decoration: none;}
+a.bussola:hover{color: #FF3366;background-color: #FFFFFF;text-decoration: none}
+a.menu{margin-left:10px;text-decoration:none;color:#FF3366;font-size:0.7em;text-align:center;background-color:#FFFFFF;}
+a.menu:hover{color:#000000;background-color:#FF3366;text-decoration:none;}
+a.progetto{margin-left:5px;font-size: 1em;text-decoration: none;color: #000000;background-color:#FFFFFF;}
+a.progetto:hover{color:#FF3366 ;background-color:  #000000;text-decoration:none}
+a.progetto1{color:  #000000;background-color:#FFFFFF;}
+a.progetto2{color:#FF3366;background-color:#FFFFFF;}
+a.soluzioni{color:#47160F;margin-left:5px;font-size:1em;text-decoration:none;background-color:#FFFFFF;}
+a.soluzioni:hover{color:#47160F;background:#E1E1E1;}
+
+h3.progetti{padding: 5px;background-color: Navy;color: #FFFFFF;margin: 3px 3px;}
+h3.menu{padding: 5px;background-color: Navy;color: #FFFFFF;margin: 3px 3px;}
+h3.progetti{padding: 5px;background-color: Navy;color: #FFFFFF;margin:3px;}
+p.box{padding-top:3px;padding-left:10px;padding-right:10px;padding-bottom:3px; margin: 1px 1px 1px 1px;font-family:"Courier New",Courier,monospace;}	
+div#header{color:#000000;background-color:#FF3366;border-bottom:2px solid #000000;border-right: 2px solid #000000;	border-top: 0px solid  #000000;border-left: 0px solid  #000000;}
+div#bussola{margin-top:5px;margin-bottom:5px;margin-left:1%;margin-right:1%;}
+div#content{margin-top:3px;margin-bottom:3px;margin-left:1%;margin-right:1%;}
+div.impazzuto{text-align:center;}
+figure.chisono{padding:5px; border: 1px solid black;float: right; background-color:#EFEFEF; display:inline; margin:15px;}
+div.wide{clear:left;margin:1%;}
+div.progElenco{width:25%;float:left;margin:5px;border:1px solid  #000000;background-color:#FFEBCD;color:#000000;}
+div.progCorpo{padding:5px;}
+h3.navbar{background-color:#FF3366;color:#FFFFFF;border:1px solid  #000000;padding:5px;margin:3px;}
+ul.navbar{list-style-type:none;float:left;padding:0.2em;margin:5px;width:95%}
+a.navbar{color:#47160F;background:#FFFFFF;display:block;text-decoration:none;text-indent:0.2em;white-space:nowrap;width:95%;padding:0.2em;margin:2px}
+a.navbar:hover{color:#000000;background-color:#E1E1E1;width:96%;margin:2px}
+li.navbar{margin:5px;border-bottom:1px solid  #000000;border-top:0px solid  #000000;text-align:left;}
+ul.navbar_selected {float:left;padding:0.2em;margin:0.2em;width:95%;font-weight:bold;}
+a.navbar_selected{color:#47160F;background-color:#FFFFFF;display:block;text-decoration:none;text-indent:0.2em;white-space:nowrap;width:95%;padding:0.2em;border:1px solid  #000000;font-weight:bold;}
+a.navbar_selected:hover{width:95%;}
+li.navbar_selected{padding:0.3em;margin-left:0.3em;margin-right:0.3em;border-bottom:0px solid  #000000;text-align:left;}
+a.navbar_static{color:#47160F;background-color:#FFFFFF;display:block;text-decoration:none;text-indent:1.5em;white-space:nowrap;width:95%;padding:0.2em;}
+li.navbar_static{margin-left:0.3em;margin-right:0.3em;border-bottom:0px solid  #000000;text-align:left;}
+li.navbar_static_end{padding-bottom:5px;margin-left:0.3em;margin-right:0.3em;border-bottom:1px solid  #000000;text-align:left;}
+a.navbar_static_selected{font-weight:bold;color:#47160F;background-color:#FFFFFF;display:block;text-decoration:none;text-indent:1.5em; white-space:nowrap;width:95%;padding:0.2em;}
+li.navbar_static_selected{font-weight:bold;margin-left:0.3em;background-color:#FFFFFF;margin-right:0.3em;border-bottom:0px solid  #000000;text-align:left;}
+li.navbar_static_end_selected{font-weight:bold;padding-bottom:5px;background-color:#FFFFFF;margin-left:0.3em;margin-right:0.3em;border-bottom:1px solid  #000000;text-align:left;}
+label.form{float:left;background-color:red;margin-right:1em;width:90px;}

@@ -1,0 +1,111 @@
+﻿@model List<String>
+@{
+    ViewBag.Title = "Lavoro Archivio";
+}
+<div id="content">
+    <div class="whide">
+        <!-- 1 colonna-->	
+        <div style="width:25%;float:left;">
+            <div style="float:left;margin-bottom:10em;border:0px solid black;width:98%">
+                <h3 class="navbar">Sezioni</h3>
+                <ul class="navbar">
+                    <li class="navbar"><a class="navbar" href="/Home/Index">home</a></li>
+                    <li class="navbar"><a class="navbar" href="/Home/ChiSono">chi sono</a></li>
+                    <li class="navbar_selected"><a class="navbar_selected" href="/Home/Lavoro">lavoro</a></li>
+                    <li class="navbar_static"><a class="navbar_static" href="/Home/Lavoro">soluzioni</a></li>
+                    <li class="navbar_static_end_selected"><a class="navbar_static" href="/Home/Archivio">archivio</a></li>
+                    <li class="navbar"><a class="navbar" href="/Home/NonLavoro">non lavoro</a></li>
+                    <li class="navbar"><a class="navbar" href="/Home/Contatti">contatti</a></li>
+                </ul>
+            </div> 
+        </div>
+   		<!--COLONNA 2 Contenuti-->
+        <h1><a id="S3">Archivio progetti</a></h1>			
+		<p>Dal 1998 al <strong>@Html.Label(ViewData["ultimoAggiornamento"].ToString())</strong> sono stati ultimati <strong></strong> progetti.<br/> 				
+		sono in corso <strong>@Html.Label(ViewData["contaProgetti"].ToString())</strong> progetti.<br/> 									
+				<div style="width:40%;float:left;border-left:0px dotted black;">
+					<p>Ho lavorato per:</p>
+						<ul style="list-style-type:circle;">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+    						<li style="background-color:#E1E1E1;">@Html.Label(Model[i].ToString())</li>
+                        }    
+                        <!--
+                        <?
+						$clienti = $db->get_results("SELECT cliente_descrizione FROM tab_progetti WHERE cliente_descrizione<>'Uso interno' GROUP by  cliente_descrizione ORDER BY cliente_descrizione");
+						foreach($clienti as $c){
+							if(strtolower($c->cliente_descrizione)==strtolower($cliente)){
+								?>
+								<li style="background-color:#E1E1E1;">
+									<strong><?echo $c->cliente_descrizione;?></strong>
+								</li>
+								<?
+							}else{
+						?>
+							<li>
+								<?echo $c->cliente_descrizione;?>
+							</li>
+						<?
+							}									
+						}?>
+                        -->
+					</ul>
+				</div>
+                <!--
+				<div style="width:50%;float:left;border:0px dotted black;">
+					<form method="POST" name="formProgetti" action="lavoro.php?s=3">
+					<fieldset>
+						<select style="margin-top:5px" name="selettoreProgetto" id="selettoreProgetto" title="Seleziona il progetto per visualizzare i dettagli" onChange="formProgetti.submit()">
+						<option value="" selected>---</option>
+						<?php
+						$categorie = $db->get_results("SELECT categoria FROM tab_progetti GROUP BY categoria ORDER BY categoria");
+							foreach($categorie as $c){?>
+							<optgroup label="<?php echo $c->categoria;?>">
+						<?php
+							$progetti = $db->get_results("SELECT id_progetto,progetto,year(fine) as fine,cliente_descrizione FROM tab_progetti WHERE categoria='$c->categoria' AND fine>0 order by fine desc");
+							foreach($progetti as $p){
+								if($p->id_progetto!=$_POST["selettoreProgetto"]){?>
+									<option value="<?php echo $p->id_progetto;?>"><?php echo $p->fine." - ".$p->progetto;?></option>
+								<?php }else{?>
+									<option value="<?php echo $p->id_progetto;?>" selected><?php echo $p->fine." - ".$p->progetto;?></option>
+								<?}
+							}?>
+							</optgroup>
+						<?php }?>
+						</select>
+						<input style="border:solid 1px #cccccc;background:#E9ECEF;color:#666666;font-weight: bold;font-size:11px;padding:4px;margin-top:5px" type="submit" name="submit" value="Dettagli" class="button" tabindex="5" />				
+					</fieldset>				
+					</form>
+				<?php 
+				if(!empty($_POST["selettoreProgetto"])||count($r)!=0){?>
+					<div style="padding:5px;margin:5px;background: #F1F3F5;border:1px solid black;">
+					<h3><?=$progetto;?></h3>
+					<table style="margin-left:10px;margin-top:5px;margin-bottom:5px;">
+						<tr>
+							<td><strong>Stato</strong></td> 
+	     						<td><?=$stato?></td>
+						</tr>
+						<tr>
+							<td><strong>Cliente</strong></td> 
+	     						<td><strong><?=$cliente?></strong></td>
+						</tr>
+						<tr>
+							<td><strong>Categoria</strong></td> 
+	     						<td><?=$categoria?></td>
+						</tr>
+						<tr>
+							<td><strong>Settore</strong></td> 
+	     						<td><?=$settore?></td>
+						</tr>
+						<tr>
+							<td><strong>Periodo</strong></td> 
+	     						<td><?=$inizio." - ".$fine?></td>
+						</tr>
+					</table>
+					</div>
+					<div style="padding:5px;margin:5px;border:1px solid black;">
+					<p><?=$contents?></p>
+					</div>
+				</div>
+               --> 
+</div>
